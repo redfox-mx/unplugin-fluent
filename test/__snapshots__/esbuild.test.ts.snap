@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`esbuild > fixtures > compiles fluent files 1`] = `
+"// test/fixture/locale.ftl
+var locale_default = { body: [{ "id": "hello-user", "value": ["Hello, ", { "type": "var", "name": "userName" }, "!"], "attributes": {} }, { "id": "shared-photos", "value": [{ "type": "var", "name": "userName" }, " ", { "type": "select", "selector": { "type": "var", "name": "photoCount" }, "variants": [{ "key": { "type": "str", "value": "one" }, "value": "added a new photo" }, { "key": { "type": "str", "value": "other" }, "value": ["added ", { "type": "var", "name": "photoCount" }, " new photos"] }], "star": 1 }, " to ", { "type": "select", "selector": { "type": "var", "name": "userGender" }, "variants": [{ "key": { "type": "str", "value": "male" }, "value": "his stream" }, { "key": { "type": "str", "value": "female" }, "value": "her stream" }, { "key": { "type": "str", "value": "other" }, "value": "their stream" }], "star": 2 }, "."], "attributes": {} }] };
+
+// test/fixture/importer.js
+var output = locale_default;
+export {
+  output
+};
+"
+`;

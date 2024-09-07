@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`rollup > fixtures > is prod environment false 1`] = `
+"//importer.js
+var locale = { body: [{"id":"hello-user","value":["Hello, ",{"type":"var","name":"userName"},"!"],"attributes":{}},{"id":"shared-photos","value":[{"type":"var","name":"userName"}," ",{"type":"select","selector":{"type":"var","name":"photoCount"},"variants":[{"key":{"type":"str","value":"one"},"value":"added a new photo"},{"key":{"type":"str","value":"other"},"value":["added ",{"type":"var","name":"photoCount"}," new photos"]}],"star":1}," to ",{"type":"select","selector":{"type":"var","name":"userGender"},"variants":[{"key":{"type":"str","value":"male"},"value":"his stream"},{"key":{"type":"str","value":"female"},"value":"her stream"},{"key":{"type":"str","value":"other"},"value":"their stream"}],"star":2},"."],"attributes":{}}] };
+
+const output = locale;
+
+export { output };
+"
+`;
+
+exports[`rollup > fixtures > is prod environment true 1`] = `
+"//importer.js
+var locale = { body: [{"id":"hello-user","value":["Hello, ",{"type":"var","name":"userName"},"!"],"attributes":{}},{"id":"shared-photos","value":[{"type":"var","name":"userName"}," ",{"type":"select","selector":{"type":"var","name":"photoCount"},"variants":[{"key":{"type":"str","value":"one"},"value":"added a new photo"},{"key":{"type":"str","value":"other"},"value":["added ",{"type":"var","name":"photoCount"}," new photos"]}],"star":1}," to ",{"type":"select","selector":{"type":"var","name":"userGender"},"variants":[{"key":{"type":"str","value":"male"},"value":"his stream"},{"key":{"type":"str","value":"female"},"value":"her stream"},{"key":{"type":"str","value":"other"},"value":"their stream"}],"star":2},"."],"attributes":{}}] };
+
+const output = locale;
+
+export { output };
+"
+`;
