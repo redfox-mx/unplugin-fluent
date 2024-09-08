@@ -3,15 +3,15 @@
   "type": "module",
   "version": "0.1.0",
   "packageManager": "pnpm@9.9.0",
-  "description": "",
+  "description": "Use all the power of the fluent project with your favorite bundler/compiler",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/unplugin-starter#readme",
+  "homepage": "https://github.com/redfox-mx/unplugin-fluent#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/unplugin-starter.git"
+    "url": "git+https://github.com/redfox-mx/unplugin-fluent.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/unplugin-starter/issues"
+    "url": "https://github.com/redfox-mx/unplugin-fluent/issues"
   },
   "keywords": [
     "fluent",

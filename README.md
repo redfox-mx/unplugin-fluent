@@ -1,28 +1,36 @@
-# unplugin-starter
+# unplugin-fluent [![npm](https://img.shields.io/npm/v/unplugin-fluent.svg)](https://npmjs.com/package/unplugin-fluent)
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-starter?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-starter)
+> Use all the power of the fluent project with your favorite bundler/compiler 🌊
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+[![ci](https://github.com/redfox-mx/unplugin-fluent/actions/workflows/ci.yml/badge.svg)](https://github.com/redfox-mx/unplugin-fluent/actions/workflows/ci.yml)
+![test](https://img.shields.io/badge/test-vite-orange)
+![test](https://img.shields.io/badge/test-webpack-blue)
+![test](https://img.shields.io/badge/test-rollup-yellow)
+![test](https://img.shields.io/badge/test-esbuild-red)
 
-## Template Usage
+Transform your fluent files into compiled fluent resources
 
-To use this template, clone it down using:
+## Usage
 
-```bash
-npx degit unplugin/unplugin-starter my-unplugin
+Import your .ftl files, that's all!!!
+
+```ts
+import enUs from './locales/en-us.ftl'
+import esMx from './locales/es-mx.ftl'
+
+// create your bundles
+const bundle = new FluentBundle('en-US', { useIsolating: false })
+const bundle = new FluentBundle('es-MX', { useIsolating: false })
+
 ```
 
-And do a global replacement of `unplugin-starter` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
 
 ## Install
 
 ```bash
-npm i unplugin-starter
+npm i -D @fluent/bundle unplugin-fluent
+
+pnpm add -D @fluent/bundle unplugin-fluent
 ```
 
 <details>
@@ -30,11 +38,11 @@ npm i unplugin-starter
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-starter/vite'
+import fluent from 'unplugin-fluent/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({ /* options */ }),
+    fluent({ /* options */ }),
   ],
 })
 ```
@@ -48,11 +56,11 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-starter/rollup'
+import fluent from 'unplugin-fluent/rollup'
 
 export default {
   plugins: [
-    Starter({ /* options */ }),
+    fluent({ /* options */ }),
   ],
 }
 ```
@@ -67,7 +75,7 @@ export default {
 module.exports = {
   /* ... */
   plugins: [
-    require('unplugin-starter/webpack')({ /* options */ })
+    require('unplugin-fluent/webpack')({ /* options */ })
   ]
 }
 ```
@@ -81,7 +89,7 @@ module.exports = {
 // nuxt.config.js
 export default defineNuxtConfig({
   modules: [
-    ['unplugin-starter/nuxt', { /* options */ }],
+    ['unplugin-fluent/nuxt', { /* options */ }],
   ],
 })
 ```
@@ -98,7 +106,7 @@ export default defineNuxtConfig({
 module.exports = {
   configureWebpack: {
     plugins: [
-      require('unplugin-starter/webpack')({ /* options */ }),
+      require('unplugin-fluent/webpack')({ /* options */ }),
     ],
   },
 }
@@ -112,11 +120,13 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from 'esbuild'
-import Starter from 'unplugin-starter/esbuild'
+import fluent from 'unplugin-fluent/esbuild'
 
 build({
-  plugins: [Starter()],
+  plugins: [fluent()],
 })
 ```
 
 <br></details>
+
+> Note: Unplugin fluent compiles your fluent files into FluentResources, sometimes this behavior can increase ypur bundle size in favor of performance

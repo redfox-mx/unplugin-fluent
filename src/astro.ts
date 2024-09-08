@@ -4,7 +4,7 @@ import type { Options } from './types'
 import fluent from '.'
 
 export default (options: Options): any => ({
-  name: 'unplugin-starter',
+  name: 'unplugin-fluent',
   hooks: {
     'astro:config:setup': async (astro: any) => {
       astro.config.vite.plugins ||= []

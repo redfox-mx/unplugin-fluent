@@ -4,6 +4,7 @@ import locale from './locale.ftl'
 const bundle = new FluentBundle('en-US', { useIsolating: false })
 bundle.addResource(locale)
 const msg = bundle.getMessage('hello')
+
 if (msg?.value) {
   bundle.formatPattern(msg.value)
   const element = document.getElementById('app')
